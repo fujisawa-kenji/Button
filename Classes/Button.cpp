@@ -50,6 +50,7 @@ const char* Button::getText()
 void Button::setText(const char *text)
 {
     this->label->setString(text);
+    this->setContentSize(this->label->getContentSize());
 }
 
 void Button::setText(const char *text, const char *fontName, float fontSize)
@@ -57,6 +58,12 @@ void Button::setText(const char *text, const char *fontName, float fontSize)
     this->label->setString(text);
     this->label->setFontName(fontName);
     this->label->setFontSize(fontSize);
+    this->setContentSize(this->label->getContentSize());
+}
+
+void Button::setTextColor(ccColor3B color)
+{
+    this->label->setColor(color);
 }
 
 void Button::setImageFile(const char *filename)
@@ -70,7 +77,7 @@ void Button::setImageTexture(cocos2d::CCTexture2D *texture)
         return;
     
     this->image->setTexture(texture);
-    this->resetTextureSize();
+    this->setContentSize(texture->getContentSize());
 }
 
 void Button::setContentSize(const cocos2d::CCSize &contentSize)

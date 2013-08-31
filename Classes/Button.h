@@ -34,6 +34,7 @@ public:
     const char* getText();
     void setText(const char* text);
     void setText(const char* text, const char* fontName, float fontSize);
+    void setTextColor(ccColor3B color);
     
     void setImageFile(const char* filename);
     void setImageTexture(CCTexture2D* texture);
